@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <title>Joe Spandrusyszyn's Portfolio</title>
+        <meta name="description" content="A collection of some of the many things that make Joe Spandrusyszyn who he is.">
+        <!--
+        TODO: Mobile/Win8 icons?
+        -->
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="s.css">
+    </head>
+    
+    <body>
+        <header>
+            <a href="/"><img class="sig" src="/images/sig.png" alt="Joe Spandrusyszyn's Signature"></a>
+            <nav>
+                <a href="/photos.html">Photos</a>
+                <a href="/stories.html">Stories</a>
+                <a href="/software.html">Software</a>
+                <span class="navline"></span>
+            </nav>
+            <div class="backbar">
+                <a data-cfs="y" class="back" href="/"><img src="/images/back.png" alt="Back"></a>
+                <span class="title"></span>
+            </div>
+        </header>
+        <main>{% block tcontent %}{% endblock %}</main>
+        <footer class="z2">
+            <a class="btn flat-btn" href="http://www.spandrusyszyn.com/joe.html" target="_blank" title="Joe Spandrusyszyn's Biography page on the Spandrusyszyn Family website">Joe Spandrusyszyn</a>
+            <a class="btn flat-btn" href="https://plus.google.com/+JosephSpandrusyszyn?rel=author" target="_blank" title="Follow Joe Spandrusyszyn on Google+">Google+</a>
+        </footer>
+        <!-- build:js /s.js defer -->
+        <script src="/scripts/requestAnimFrameShim.js"></script>
+        <script src="/scripts/analytics.js"></script>
+        <script src="/scripts/social.js"></script>
+        <script src="/scripts/main.js"></script>
+        <!-- endbuild -->
+    </body>
+
+</html>

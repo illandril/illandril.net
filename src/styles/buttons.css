@@ -1,0 +1,33 @@
+.btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 36px;
+    padding: 0 12px;
+    text-transform: uppercase;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.btn-icon {
+    padding-left: 40px;
+    background-position: 12px 6px;
+    background-repeat: no-repeat;
+}
+.flat-btn {
+    color: #202020;
+    background-color: #fff;
+}
+.flat-btn:hover {
+    background-color: #eaeaea;
+}
+.flat-btn:active {
+    background-color: #d5d5d5;
+}
+.social-btns {
+    margin: 8px 0;
+}

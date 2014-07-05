@@ -1,0 +1,19 @@
+{% extends '../partial-template.html' %}
+
+{% block title %}{% block albumTitle %}{% endblock %} - Photos by Joe Spandrusyszyn{% endblock %}
+{% block backTitle %}{% block albumTitle %}{% endblock %}{% endblock %}
+{% block description %}{% block albumTitle %}{% endblock %} - Photos by Joe Spandrusyszyn{% endblock %}
+{% block backURL %}/photos.html{% endblock %}
+
+{% block content %}
+<div class="text">TODO: Full-screen view with details... needs to be mobile zoomable, maybe with next/previous navigation?</div>
+<div class="grid">
+{% for photo in photos %}
+  <a class="tile w4 h3" target="_blank" href="/images/photos/{{ albumID }}/{{ photo.id }}-full.jpg" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
+    <span class="banner">
+       <span class="primary">{{ photo.name }}</span>
+    </span>
+  </a>
+{% endfor %}
+</div>
+{% endblock %}

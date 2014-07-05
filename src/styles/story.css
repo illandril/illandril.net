@@ -1,0 +1,11 @@
+.story {
+    max-width: 600px;
+    text-align: left;
+    display: inline-block;
+}
+.storyLine {
+    text-indent: 3em;
+    margin: 8px 0;
+    line-height: 1.5em;
+    max-width: 600px;
+}

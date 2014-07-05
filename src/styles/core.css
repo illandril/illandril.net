@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+}
+a {
+    color: #FF0;
+    /*#03a9f4;*/
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+body {
+    color: #F0F;
+}
+img {
+    max-width: 100%;
+}
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+x-page {
+    display: none;
+}

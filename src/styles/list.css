@@ -1,0 +1,41 @@
+.list .subheader {
+    font-size: 14px;
+    color: #747474;
+    padding: 14px 0 15px 0;
+    font-weight: bold;
+}
+.list .subheader .more {
+    font-weight: normal;
+}
+.list {
+    padding: 8px 16px;
+    text-align: left;
+}
+.list .item {
+    display: block;
+    padding: 16px 0;
+}
+.list .content {
+    display: block;
+}
+.list .content .primary {
+    display: block;
+    font-size: 16px;
+    color: #202020;
+}
+.list .content .secondary {
+    display: block;
+    font-size: 14px;
+    color: #747474;
+}
+.list .item[href^="http"] .primary:after {
+    content:"";
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-left: 8px;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAPNJREFUOMvF0kErhVEQBuCHiw22dpcFKQul5BewU36JlSW5KfwCJTY2lv6AkrJWCkW2LKxkJSL3Xps5On2+7yurO3XqnJl5Z96Z89Jr6/tH7iHe4j6IA9wPZAnL2EO3AHyM2DvWMv8rttJjBh3MY6pwJiJnBE/RoItNSAxWcIKrmhGu0cQ5FhPT/gg28FUBHMIlJrGDJZxl+wDrOK4ocBvdNjJfIwr/Miiz4QDPYhu72T7aiXFdgYUM3MIcjopJ+TcWv+8iQDeZ70/D5PjGaAmLHPxRp8QxPGAVLyUK/cR+COm0SsrjmC6MlayDZ9yVjNpj+wEXmi/gvXQ0twAAAABJRU5ErkJggg==);
+}
