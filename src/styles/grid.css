@@ -5,44 +5,38 @@
     font-size: 0;
     line-height: 0;
 }
-.tile.w1 {
-    width: 72px;
-}
-.tile.h1 {
-    height: 72px;
-}
-.tile.w2 {
-    width: 144px;
-}
-.tile.h2 {
-    height: 144px
-}
-.tile.w3 {
-    width: 216px;
-}
-.tile.h3 {
-    height: 216px;
-}
-.tile.w4 {
-    width: 288px;
-}
-.tile.h4 {
-    height: 288px;
-}
 .image-grid img {
     margin: 2px;
     vertical-align: middle;
 }
+.tile,
+.multitile {
+    display: inline-block;
+    width: 240px;
+    height: 240px;
+    vertical-align: top;
+    margin: 2px;
+}
 .tile {
     text-align: left;
-    width: 144px;
-    height: 144px;
     margin: 2px;
     position: relative;
-    display: inline-block;
     cursor: pointer;
     color: #fff;
     background-color: #747474;
+    transition: opacity 0.25s ease-in-out;
+}
+.tile:hover {
+    opacity: 0.9;
+}
+.tile.short {
+    height: 118px;
+}
+.multitile .tile {
+    margin: 0;
+}
+.multitile .tile + .tile {
+    margin-top: 4px;
 }
 .tile .banner {
     position: absolute;

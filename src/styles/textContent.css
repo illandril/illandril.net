@@ -3,4 +3,7 @@
     padding: 8px 16px;
     line-height: 1.5em;
     text-align: left;
+    font-size: 14px;
+    max-width: 450px;
+    display: inline-block;
 }

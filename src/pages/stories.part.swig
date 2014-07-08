@@ -84,7 +84,6 @@ UO Short Stories
 %}
 
 {% block content %}
-<div class="text">NOTICE: This page is under construction! I have not yet added all of these stories.</div>
 {% for storyGroup in storyGroups %}
 <div class="list">
     <div class="subheader">
