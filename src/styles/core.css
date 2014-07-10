@@ -3,15 +3,10 @@
     font-family:'Roboto', sans-serif;
 }
 a {
-    color: #FF0;
-    /*#03a9f4;*/
     text-decoration: none;
 }
 a img {
     border: none;
-}
-body {
-    color: #F0F;
 }
 img {
     max-width: 100%;

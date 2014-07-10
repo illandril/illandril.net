@@ -23,7 +23,7 @@ gulp.task('build-styles', function() {
     return gulp.src('src/styles/**/*.css')
             .pipe(concat('s.css'))
             .pipe($.csso())
-            .pipe(gulp.dest('build'))
+            .pipe(gulp.dest('dist'))
             .pipe($.size({
                 title: 'css'
             }));
@@ -110,10 +110,12 @@ gulp.task('build-html', ['build-styles', 'build-fulls', 'build-html-prep'], func
     .pipe($.if ('*.js', $.uglify()))
     .pipe($.useref.restore())
     .pipe($.useref())
+/*
     .pipe(replace(/<link rel="stylesheet" href="s.css">/, function(s) {
             var style = fs.readFileSync('build/s.css', 'utf8');
             return '<style>' + style + '</style>';
         }))
+*/
     .pipe($.minifyHtml())
     .pipe(chmod(644))
     .pipe(gulp.dest('./dist/'))
