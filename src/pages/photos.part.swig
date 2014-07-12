@@ -30,7 +30,7 @@
   {
     id: 'food',
     name: 'Food',
-    count: 42
+    count: 5
   }
 ] %}
 {% block content %}

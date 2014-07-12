@@ -9,11 +9,30 @@
 <div class="text">TODO: Full-screen view with details... needs to be mobile zoomable, maybe with next/previous navigation?</div>
 <div class="grid">
 {% for photo in photos %}
-  <a class="tile w4 h3" target="_blank" href="/images/photos/{{ albumID }}/{{ photo.id }}-full.jpg" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
+  <a class="tile w4 h3" href="#{{ photo.id }}" onclick="showPhotoPopup(this);" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
     <span class="banner">
        <span class="primary">{{ photo.name }}</span>
     </span>
   </a>
+  <div class="photoPopup">
+    <a href="#" class="close" onclick="hidePhotoPopup(this);">X</a>
+    <table>
+      <tr>
+        <td class="photo">
+          <img src="/images/photos/{{ albumID }}/{{ photo.id }}.jpg">
+        </td>
+        <td class="info">
+          <a class="btn flat-btn" target="_blank" href="{{ photo.purchase }}">Purchase a print</a>
+          <br>
+          <div class="exif">
+            <div class="title">Photo Details</div>
+          </div>
+          <br>
+          <div class="social-btns"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
 {% endfor %}
 </div>
 {% endblock %}

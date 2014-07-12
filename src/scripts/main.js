@@ -1,9 +1,15 @@
 (function() {
-    var addCSSClass = function(elem, cssClass) {
+    var pageInitActions = [];
+    window.onPageLoad = function(fn) {
+      fn();
+      pageInitActions.push(fn);
+    };
+    
+    window.addCSSClass = function(elem, cssClass) {
         elem.className = elem.className + ' ' + cssClass;
     };
 
-    var removeCSSClass = function(elem, cssClass) {
+    window.removeCSSClass = function(elem, cssClass) {
         var newClasses = [];
         var oldClasses = elem.className.split(' ');
         var nOldClasses = oldClasses.length;
@@ -95,6 +101,10 @@
 
         resetLinks();
         window.refreshSocials();
+        var nPageInitActions = pageInitActions.length;
+        for( var i = 0; i < nPageInitActions; i++ ) {
+            pageInitActions[i]();
+        }
     };
 
     var snackbar = function(message, actionText, action) {
@@ -127,6 +137,7 @@
     };
 
     if (window.history.pushState) {
+        var hasPushed = false;
         var currentState = getState(window.location.href);
         var forFOF = false;
 
@@ -143,6 +154,7 @@
         };
 
         var fetch = function(href, callback, skipPush, state) {
+            console.log('fetch-' + href);
             var url = href;
             if (url.charAt(url.length - 1) == '/') {
                 url = '/index.html';
@@ -184,6 +196,7 @@
             xhr.send();
             currentState = state;
             if (!skipPush) {
+                hasPushed = true;
                 window.history.pushState(state, null, href);
             }
         };
@@ -210,6 +223,7 @@
         };
 
         var loadFS = function(href, skipPush) {
+            console.log('loadFS-' + href);
             fetch(href, function(responseText) {
                 var main = document.querySelector('main');
                 var newContent = newActiveMain(responseText);
@@ -232,6 +246,7 @@
         };
 
         var loadNFS = function(href, skipPush) {
+            console.log('loadNFS-' + href);
             fetch(href, function(responseText) {
                 var main = document.querySelector('main');
                 var newContent = newActiveMain(responseText);
@@ -254,6 +269,7 @@
                 forFOF = false;
                 return;
             }
+            console.log('loadBack-' + href);
             if (currentState == 'fs') {
                 loadNFS(href, true);
             } else {
@@ -269,6 +285,7 @@
             if (href == window.location.href) {
                 return;
             }
+            console.log('load-' + href);
             if (typeof(index) != 'number') {
                 if (href.indexOf('.html') == -1) {
                     index = -1;
@@ -332,7 +349,9 @@
         };
 
         window.addEventListener("popstate", function(e) {
-            loadBack(location.pathname, e.state);
+            if(hasPushed){
+                loadBack(location.pathname, e.state);
+            }
         });
     }
 

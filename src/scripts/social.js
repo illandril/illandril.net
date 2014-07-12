@@ -30,7 +30,6 @@
             window.open(site.getURL());
         };
         target.appendChild(btn);
-        target.className = target.className + ' sbd';
     };
 
     var addSocials = function(target) {
@@ -38,6 +37,7 @@
         for (var i = 0; i < nSites; i++) {
             addSocial(target, sites[i]);
         }
+        target.className = target.className + ' sbd';
     };
 
     window.refreshSocials = function() {
