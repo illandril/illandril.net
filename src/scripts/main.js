@@ -126,7 +126,7 @@
         });
     };
 
-    if (history) {
+    if (window.history.pushState) {
         var currentState = getState(window.location.href);
         var forFOF = false;
 
@@ -184,7 +184,7 @@
             xhr.send();
             currentState = state;
             if (!skipPush) {
-                history.pushState(state, null, href);
+                window.history.pushState(state, null, href);
             }
         };
 
