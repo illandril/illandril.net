@@ -52,12 +52,12 @@ gulp.task('favicon', function() {
     }));
 });
 
-gulp.task('php', function() {
-    return gulp.src('php/**/*.php')
+gulp.task('static', function() {
+    return gulp.src('static/**/*')
     .pipe(chmod(644))
     .pipe(gulp.dest('dist'))
     .pipe($.size({
-        title: 'php'
+        title: 'static'
     }));
 });
 
@@ -139,10 +139,10 @@ gulp.task('pagespeed', function(cb) {
 
 // Watch Files For Changes & Reload
 gulp.task('watch', function () {
-  gulp.watch(['src/**/*', 'php/**/*'], ['default']);
+  gulp.watch(['src/**/*', 'static/**/*'], ['default']);
 });
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('sitemap', ['images','php', 'favicon'], cb);
+  runSequence('sitemap', ['images','static', 'favicon'], cb);
 });
