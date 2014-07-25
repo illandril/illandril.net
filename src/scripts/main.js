@@ -137,6 +137,7 @@
     };
 
     if (window.history.pushState) {
+        var currentHref = window.location.href;
         var hasPushed = false;
         var currentState = getState(window.location.href);
         var forFOF = false;
@@ -165,6 +166,7 @@
             xhr.onload = function() {
                 if (xhr.status == 200) {
                     callback(xhr.responseText);
+                    currentHref = href;
                     updatePage(href);
                 } else {
                     snackbar('The page could not be loaded.', 'Notify', function() {
@@ -175,6 +177,7 @@
                         forFOF = true;
                         window.history.back();
                     } else {
+                        currentHref = href;
                         updatePage(href);
                     }
                 }
@@ -189,6 +192,7 @@
                     forFOF = true;
                     window.history.back();
                 } else {
+                    currentHref = href;
                     updatePage(href);
                 }
             };
@@ -223,6 +227,10 @@
         };
 
         var loadFS = function(href, skipPush) {
+            if (href == currentHref) {
+                console.log('skip loadFS - no URL change');
+                return;
+            }
             console.log('loadFS-' + href);
             fetch(href, function(responseText) {
                 var main = document.querySelector('main');
@@ -246,6 +254,10 @@
         };
 
         var loadNFS = function(href, skipPush) {
+            if (href == currentHref) {
+                console.log('skip loadNFS - no URL change');
+                return;
+            }
             console.log('loadNFS-' + href);
             fetch(href, function(responseText) {
                 var main = document.querySelector('main');
@@ -282,7 +294,8 @@
         };
 
         var load = function(href, index, skipLoad) {
-            if (href == window.location.href) {
+            if (href == currentHref) {
+                console.log('skip load - no URL change');
                 return;
             }
             console.log('load-' + href);
@@ -349,8 +362,15 @@
         };
 
         window.addEventListener("popstate", function(e) {
+            console.log('popstate');
+            console.dir(e);
             if(hasPushed){
-                loadBack(location.pathname, e.state);
+                var href = location.href;
+                if ( href.indexOf('#') !== -1 ) {
+                    href = href.substring(0,href.indexOf('#'));
+                }
+                console.log('popstate - hasPushed - ' + href);
+                loadBack(href, e.state);
             }
         });
     }
