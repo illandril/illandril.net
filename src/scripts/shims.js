@@ -1,18 +1,18 @@
 // Console shim
-if(!console){
-  console = {
-    assert: function(){},
-    clear: function(){},
-    count: function(){},
-    debug: function(){},
-    dir: function(){},
-    error: function(){},
-    info: function(){},
-    log: function(){},
-    table: function(){},
-    trace: function(){},
-    warn: function(){}
-  };
+if (!console) {
+    console = {
+        assert: function() {},
+        clear: function() {},
+        count: function() {},
+        debug: function() {},
+        dir: function() {},
+        error: function() {},
+        info: function() {},
+        log: function() {},
+        table: function() {},
+        trace: function() {},
+        warn: function() {}
+    };
 }
 
 // Paul Irish requestAnimFrame shim

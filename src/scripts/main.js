@@ -1,10 +1,10 @@
 (function() {
     var pageInitActions = [];
     window.onPageLoad = function(fn) {
-      fn();
-      pageInitActions.push(fn);
+        fn();
+        pageInitActions.push(fn);
     };
-    
+
     window.addCSSClass = function(elem, cssClass) {
         elem.className = elem.className + ' ' + cssClass;
     };
@@ -102,7 +102,7 @@
         resetLinks();
         window.refreshSocials();
         var nPageInitActions = pageInitActions.length;
-        for( var i = 0; i < nPageInitActions; i++ ) {
+        for (var i = 0; i < nPageInitActions; i++) {
             pageInitActions[i]();
         }
     };
@@ -364,10 +364,10 @@
         window.addEventListener("popstate", function(e) {
             console.log('popstate');
             console.dir(e);
-            if(hasPushed){
+            if (hasPushed) {
                 var href = location.href;
-                if ( href.indexOf('#') !== -1 ) {
-                    href = href.substring(0,href.indexOf('#'));
+                if (href.indexOf('#') !== -1) {
+                    href = href.substring(0, href.indexOf('#'));
                 }
                 console.log('popstate - hasPushed - ' + href);
                 loadBack(href, e.state);

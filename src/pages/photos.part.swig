@@ -9,8 +9,8 @@
   },
   {
     id: 'plants',
-    name: 'Plants &amp; Flowers',
-    count: 42
+    name: 'Wild Plants &amp; Flowers',
+    count: 4
   },
   {
     id: 'landscapes',

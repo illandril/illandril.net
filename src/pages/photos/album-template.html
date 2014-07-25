@@ -6,12 +6,11 @@
 {% block backURL %}/photos.html{% endblock %}
 
 {% block content %}
-<div class="text">TODO: Full-screen view with details... needs to be mobile zoomable, maybe with next/previous navigation?</div>
 <div class="grid">
 {% for photo in photos %}
   <a class="tile w4 h3" href="#{{ photo.id }}" onclick="showPhotoPopup(this);" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
     <span class="banner">
-       <span class="primary">{{ photo.name }}</span>
+       <span class="primary">{% if photo.name.length > 27 %}{{ photo.name.substring(0, 24) }}...{% else %}{{ photo.name }}{% endif %}</span>
     </span>
   </a>
   <div class="photoPopup">
@@ -22,10 +21,11 @@
           <img src="/images/photos/{{ albumID }}/{{ photo.id }}.jpg">
         </td>
         <td class="info">
+          <div class="title">{{ photo.name }}</div>
           <a class="btn flat-btn" target="_blank" href="{{ photo.purchase }}">Purchase a print</a>
           <br>
           <div class="exif">
-            <div class="title">Photo Details</div>
+            <div class="section">Photo Details</div>
           </div>
           <br>
           <div class="social-btns"></div>
