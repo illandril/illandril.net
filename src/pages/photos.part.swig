@@ -5,12 +5,12 @@
   {
     id: 'wild-animals',
     name: 'Wild Animals',
-    count: 42
+    count: 5
   },
   {
     id: 'plants',
     name: 'Wild Plants &amp; Flowers',
-    count: 4
+    count: 5
   },
   {
     id: 'landscapes',

@@ -5,6 +5,9 @@
         if (value == null) {
             return document.createComment('No ' + name + ' EXIF value');
         }
+        return getEXIFNameValuePair(prettyName, value, transform);
+    };
+    var getEXIFNameValuePair = function(prettyName, value, transform) {
         var container = document.createElement('tr');
 
         var nameElem = document.createElement('td');
@@ -17,7 +20,11 @@
         }
         var valueElem = document.createElement('td');
         valueElem.className = 'value';
-        valueElem.appendChild(document.createTextNode(value));
+        if ( value instanceof Node ) {
+            valueElem.appendChild(value);
+        } else {
+            valueElem.appendChild(document.createTextNode(value));
+        }
         container.appendChild(valueElem);
 
         returnedExif = true;
@@ -60,6 +67,34 @@
             exifTable.appendChild(getEXIFDisplay(this, 'Flash', 'Flash', function(value) {
                 return value.indexOf('Flash fired') == -1 ? 'Not Used' : 'Used';
             }));
+            exifTable.appendChild(getEXIFDisplay(this, 'Location', 'Flash', function(value) {
+                return value.indexOf('Flash fired') == -1 ? 'Not Used' : 'Used';
+            }));
+            var lat = EXIF.getTag(this, 'GPSLatitude');
+            var latD = EXIF.getTag(this, 'GPSLatitudeRef') || 'N';
+            var lon = EXIF.getTag(this, 'GPSLongitude');
+            var lonD = EXIF.getTag(this, 'GPSLongitudeRef') || 'W';
+            if (lat != null && lat.length == 3 && lon != null && lon.length == 3) {
+                
+                var lats = lat[0] + '° ' + lat[1] + '\' ' + (Math.round(lat[2] * 100) / 100) + '" ' + latD;
+                var late = document.createElement('span');
+                late.className = 'lat';
+                late.appendChild(document.createTextNode(lats));
+                
+                var lons = lon[0] + '° ' + lon[1] + '\' ' + (Math.round(lon[2] * 100) / 100) + '" ' + lonD;
+                var lone = document.createElement('span');
+                lone.className = 'lon';
+                lone.appendChild(document.createTextNode(lons));
+                
+                var gpsa = document.createElement('a');
+                gpsa.className = 'gps';
+                gpsa.target = '_blank';
+                gpsa.href = 'https://maps.google.com?q=' + encodeURIComponent(lats + ', ' + lons);
+                gpsa.appendChild(late);
+                gpsa.appendChild(document.createTextNode(', '));
+                gpsa.appendChild(lone);
+                exifTable.appendChild(getEXIFNameValuePair('Location', gpsa));
+            }
             if (!returnedExif) {
                 exifDisplay.innerHTML = '';
             } else {

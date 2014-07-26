@@ -1,116 +1,129 @@
 .photoPopup {
-  display: none;
-  position: fixed !important;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background-color: #111;
-  margin: 0 auto;
-  overflow-y: auto;
-  line-height: normal;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  text-align: center;
+    display: none;
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #111;
+    margin: 0 auto;
+    overflow-y: auto;
+    line-height: normal;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
 }
 .photoPopup .social-btns {
-  display: inline-block;
+    display: inline-block;
 }
 .photoPopup .flat-btn {
-  background-color: #111;
-  color: #fff;
+    background-color: #111;
+    color: #fff;
 }
 .photoPopup .flat-btn:hover {
-  background-color: #222;
+    background-color: #222;
 }
 .photoPopup .flat-btn:active {
-  background-color: #333;
+    background-color: #333;
 }
 .photoPopup > table {
-  table-layout:fixed;
-  width: 100%;
-  max-width: 1246px;
-  margin: auto;
+    table-layout:fixed;
+    width: 100%;
+    max-width: 1246px;
+    margin: auto;
 }
 .photoPopup::after {
-  position: fixed !important;
+    position: fixed !important;
 }
 .photoPopup.active {
-  display: block;
-  opacity: 1;
+    display: block;
+    opacity: 1;
 }
 .photoPopup .title {
-  font-size: 20px;
-  color: #f5f5f5;
-  text-align: center;
-  margin-bottom: 8px;
+    font-size: 20px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 8px;
 }
 .photoPopup img {
-  max-height: 100%;
-  max-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 .photoPopup .photo {
-  padding: 8px;
-  line-height: 0;
-  font-size: 0;
-  vertical-align: middle;
+    padding: 8px;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: middle;
 }
 .photoPopup .close {
- color: #202020;
- z-index: 1;
- position: absolute;
- top: 0px;
- left: 0px;
- border-bottom-right-radius: 22px;
- background-color: #fff;
- height: 24px;
- width: 24px;
- padding: 5px;
- line-height: 10px;
- font-size: 10px;
- font-weight: bold;
- text-align: left;
- display: inline-block;
- border-right: 1px solid #202020;
- border-bottom: 1px solid #202020;
+    color: #202020;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom-right-radius: 22px;
+    background-color: #fff;
+    height: 24px;
+    width: 24px;
+    padding: 5px;
+    line-height: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: left;
+    display: inline-block;
+    border-right: 1px solid #202020;
+    border-bottom: 1px solid #202020;
 }
 .photoPopup .info {
-  width: 216px;
-  text-align: center;
-  padding: 8px;
-  vertical-align: middle;
+    width: 216px;
+    text-align: center;
+    padding: 8px;
+    vertical-align: middle;
 }
 .exif {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 12px;
-  color: #fff;
-  text-align: left;
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #fff;
+    text-align: left;
 }
-.exif .name,
-.exif .value {
-  padding: 4px 0;
+.gps .lat,
+.gps .lon {
+    display: inline-block;
+}
+.gps {
+    background-color: #111;
+    color: #fff;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
+    display: inline-block;
+}
+.gps:hover {
+    background-color: #222;
+}
+.gps:active {
+    background-color: #333;
+}
+.exif .name, .exif .value {
+    padding: 4px 0;
 }
 .exif .name {
-  color: #747474;
-  white-space: nowrap;
-  padding-right: 1em;
+    color: #747474;
+    white-space: nowrap;
+    padding-right: 8px;
 }
 .photoPopup .social-btns .btn {
-  width: 100px;
+    width: 100px;
 }
-@media (max-width: 800px) {
-  .photoPopup.active > table,
-  .photoPopup.active > table > tbody,
-  .photoPopup.active > table > tbody > tr,
-  .photoPopup .photo,
-  .photoPopup .info {
-    display: block;
-    width: 100%;
-  }
-  .photoPopup .info {
-    margin-bottom: 40px;
-  }
+@media(max-width: 800px) {
+    .photoPopup.active > table, .photoPopup.active > table > tbody, .photoPopup.active > table > tbody > tr, .photoPopup .photo, .photoPopup .info {
+        display: block;
+        width: 100%;
+    }
+    .photoPopup .info {
+        margin-bottom: 40px;
+    }
 }
-

@@ -21,5 +21,10 @@
     id: 'eh',
     name: 'Eastern Hemlock',
     purchase: 'http://fineartamerica.com/featured/eastern-hemlock-joe-spandrusyszyn.html'
+  },
+  {
+    id: 'sb',
+    name: 'Solitary Blossom',
+    purchase: 'http://fineartamerica.com/featured/solitary-blossom-joe-spandrusyszyn.html'
   }
 ] %}
