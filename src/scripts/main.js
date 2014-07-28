@@ -132,7 +132,7 @@
                 setTimeout(function() {
                     document.body.removeChild(bar);
                 }, 1000);
-            }, 2500);
+            }, 6000);
         });
     };
 

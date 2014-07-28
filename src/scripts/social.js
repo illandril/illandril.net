@@ -19,9 +19,9 @@
 
     var addSocial = function(target, site) {
         var btn = document.createElement('span');
-        btn.className = 'btn flat-btn';
+        btn.className = 'btn';
         if (site.icon) {
-            btn.className = 'btn flat-btn btn-icon';
+            btn.className = 'btn btn-icon';
             btn.style.backgroundImage = 'url(' + site.icon + ')';
         }
         btn.innerHTML = site.linkTitle;

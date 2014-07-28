@@ -1,4 +1,6 @@
 .btn {
+    color: #202020;
+    background-color: #fff;
     display: inline-block;
     font-weight: normal;
     font-size: 14px;
@@ -12,22 +14,32 @@
     transition: background-color .3s;
     vertical-align: middle;
     white-space: nowrap;
+    margin: 4px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.13);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.13);
+}
+.btn:after {
+    content:'';
+    position:absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
 }
 .btn-icon {
     padding-left: 40px;
     background-position: 12px 6px;
     background-repeat: no-repeat;
 }
-.flat-btn {
-    color: #202020;
-    background-color: #fff;
-}
-.flat-btn:hover {
+.btn:hover {
     background-color: #eaeaea;
 }
-.flat-btn:active {
+.btn:active {
     background-color: #d5d5d5;
-}
-.social-btns {
-    margin: 8px 0;
 }

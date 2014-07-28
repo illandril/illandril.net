@@ -100,15 +100,16 @@ gulp.task('build-html-prep', function() {
 });
 
 gulp.task('build-html', ['build-styles', 'build-fulls', 'build-html-prep'], function() {
+    var assets = $.useref.assets({
+        searchPath: '{.tmp,src}'
+    });
     return gulp.src('build/pages/**/*.swig')
     .pipe(swig())
-    .pipe($.useref.assets({
-        searchPath: '{.tmp,src}'
-    }))
+    .pipe(assets)
     // Concatenate And Minify JavaScript
     // Pass {mangle:false} to uglify to debug js
     .pipe($.if ('*.js', $.uglify()))
-    .pipe($.useref.restore())
+    .pipe(assets.restore())
     .pipe($.useref())
 /*
     .pipe(replace(/<link rel="stylesheet" href="/s.css">/, function(s) {

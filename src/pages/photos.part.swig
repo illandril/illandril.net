@@ -5,39 +5,45 @@
   {
     id: 'wild-animals',
     name: 'Wild Animals',
-    count: 5
+    count: 5,
+    cover: 'gbh'
   },
   {
     id: 'plants',
     name: 'Wild Plants &amp; Flowers',
-    count: 5
+    count: 5,
+    cover: 'tlm'
   },
   {
     id: 'landscapes',
     name: 'Landscapes',
-    count: 42
+    count: 42,
+    cover: 'xxx'
   },
   {
     id: 'pets',
     name: 'Pets',
-    count: 42
+    count: 42,
+    cover: 'xxx'
   },
   {
     id: 'gardens',
     name: 'Gardens',
-    count: 42
+    count: 42,
+    cover: 'xxx'
   },
   {
     id: 'food',
     name: 'Food',
-    count: 5
+    count: 5,
+    cover: 'cb'
   }
 ] %}
 {% block content %}
 <div class="text">NOTICE: This page is under construction! I have not yet populated these albums!</div>
 <div class="grid">
 {% for album in albums %}
-  <a class="tile" data-fs="y" href="/photos/{{ album.id }}.html" style="background-image:url(/images/photos/album-{{ album.id }}.jpg);">
+  <a class="tile" data-fs="y" href="/photos/{{ album.id }}.html" style="background-image:url(/images/photos/{{ album.id }}/{{ album.cover }}-grid.jpg);">
     <span class="banner">
        <span class="primary">{{ album.name }}</span>
        <span class="secondary">{{ album.count }}</span>

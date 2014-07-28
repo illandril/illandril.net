@@ -17,20 +17,28 @@
 .photoPopup .social-btns {
     display: inline-block;
 }
-.photoPopup .flat-btn {
+.photoPopup .btn {
     background-color: #111;
     color: #fff;
+    -webkit-box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.26);
+    -moz-box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.26);
+    box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.26);
 }
-.photoPopup .flat-btn:hover {
+.photoPopup .btn:after {
+    -webkit-box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.16);
+    -moz-box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.16);
+    box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.16);
+}
+.photoPopup .btn:hover {
     background-color: #222;
 }
-.photoPopup .flat-btn:active {
+.photoPopup .btn:active {
     background-color: #333;
 }
 .photoPopup > table {
     table-layout:fixed;
     width: 100%;
-    max-width: 1246px;
+    max-width: 1258px;
     margin: auto;
 }
 .photoPopup::after {
@@ -76,7 +84,7 @@
     border-bottom: 1px solid #202020;
 }
 .photoPopup .info {
-    width: 216px;
+    width: 228px;
     text-align: center;
     padding: 8px;
     vertical-align: middle;
@@ -116,7 +124,7 @@
     padding-right: 8px;
 }
 .photoPopup .social-btns .btn {
-    width: 100px;
+    width: 98px;
 }
 @media(max-width: 800px) {
     .photoPopup.active > table, .photoPopup.active > table > tbody, .photoPopup.active > table > tbody > tr, .photoPopup .photo, .photoPopup .info {
