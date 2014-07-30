@@ -5,26 +5,26 @@
   {
     id: 'tlm',
     name: 'Three Little Mushrooms',
-    purchase: 'http://fineartamerica.com/featured/three-little-mushrooms-joe-spandrusyszyn.html'
+    purchase: 'http://www.500pxart.com/photo/78113195?substrate=wood&style=BW&frame=F0000&size=S'
   },
   {
     id: 'tb',
     name: 'Blossoms',
-    purchase: 'http://fineartamerica.com/featured/blossoms-joe-spandrusyszyn.html'
+    purchase: 'http://www.500pxart.com/photo/78113193?substrate=canvas&style=CG&frame=F0000&size=S'
   },
   {
     id: 'wt',
     name: 'Wild Teasel',
-    purchase: 'http://fineartamerica.com/featured/wild-teasel-joe-spandrusyszyn.html'
+    purchase: 'http://www.500pxart.com/photo/78113197?substrate=canvas&style=CG&frame=F0000&size=S'
   },
   {
     id: 'eh',
     name: 'Eastern Hemlock',
-    purchase: 'http://fineartamerica.com/featured/eastern-hemlock-joe-spandrusyszyn.html'
+    purchase: 'http://www.500pxart.com/photo/78113207?substrate=wood&style=BW&frame=F0000&size=S'
   },
   {
     id: 'sb',
     name: 'Solitary Blossom',
-    purchase: 'http://fineartamerica.com/featured/solitary-blossom-joe-spandrusyszyn.html'
+    purchase: 'http://www.500pxart.com/photo/78113187?substrate=paper&style=PF&frame=F0091&size=S'
   }
 ] %}
