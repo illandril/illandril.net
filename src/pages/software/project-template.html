@@ -10,7 +10,7 @@
 <div class="text">{% block projectDescription %}{% endblock %}</div>
 <div class="list">
     {% for link in project.links %}
-        <a class="item" target="_blank" href="{{link.url}}">
+        <a class="item" target="_blank" data-trk="projectLink" data-id="{{ link.url }}" href="{{link.url}}">
             <span class="content">
                 <span class="primary">{{ link.name }}</span>
                 <span class="secondary">{{ link.details }}</span>

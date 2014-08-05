@@ -8,7 +8,7 @@
 {% block content %}
 <div class="grid">
 {% for photo in photos %}
-  <a class="tile w4 h3" href="#{{ photo.id }}" onclick="showPhotoPopup(this);" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
+  <a class="tile w4 h3" data-trk="photoView" data-id="{{ photo.id }}" href="#{{ photo.id }}" onclick="showPhotoPopup(this);" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
     <span class="banner">
        <span class="primary">{% if photo.name.length > 27 %}{{ photo.name.substring(0, 24) }}...{% else %}{{ photo.name }}{% endif %}</span>
     </span>
@@ -22,7 +22,7 @@
         </td>
         <td class="info">
           <div class="title">{{ photo.name }}</div>
-          <a class="btn" target="_blank" href="{{ photo.purchase }}">Purchase a print</a>
+          <a class="btn" target="_blank" data-trk="photoPurchase" data-id="{{ photo.id }}" href="{{ photo.purchase }}">Purchase a print</a>
           <br>
           <div class="exif">
             <div class="section">Photo Details</div>
