@@ -26,5 +26,10 @@
     id: 'sb',
     name: 'Solitary Blossom',
     purchase: 'http://www.500pxart.com/photo/78113187?substrate=paper&style=PF&frame=F0091&size=S'
+  },
+  {
+    id: 't',
+    name: 'Thistle',
+    purchase: 'http://www.500pxart.com/photo/79432231?substrate=canvas&style=CG&frame=F0000&size=S'
   }
 ] %}

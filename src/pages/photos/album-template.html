@@ -22,8 +22,10 @@
         </td>
         <td class="info">
           <div class="title">{{ photo.name }}</div>
-          <a class="btn" target="_blank" data-trk="photoPurchase" data-id="{{ photo.id }}" href="{{ photo.purchase }}">Purchase a print</a>
-          <br>
+          {% if photo.purchase %}
+            <a class="btn" target="_blank" data-trk="photoPurchase" data-id="{{ photo.id }}" href="{{ photo.purchase }}">Purchase a print</a>
+            <br>
+          {% endif %}
           <div class="exif">
             <div class="section">Photo Details</div>
           </div>

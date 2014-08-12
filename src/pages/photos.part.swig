@@ -11,26 +11,26 @@
   {
     id: 'plants',
     name: 'Wild Plants &amp; Flowers',
-    count: 5,
+    count: 6,
     cover: 'tlm'
   },
   {
     id: 'landscapes',
     name: 'Landscapes',
-    count: 42,
-    cover: 'xxx'
+    count: 3,
+    cover: 'll'
   },
   {
     id: 'pets',
     name: 'Pets',
-    count: 42,
-    cover: 'xxx'
+    count: 3,
+    cover: 'mf'
   },
   {
     id: 'gardens',
     name: 'Gardens',
-    count: 42,
-    cover: 'xxx'
+    count: 3,
+    cover: 'gb'
   },
   {
     id: 'food',
@@ -40,7 +40,6 @@
   }
 ] %}
 {% block content %}
-<div class="text">NOTICE: This page is under construction! I have not yet populated these albums!</div>
 <div class="grid">
 {% for album in albums %}
   <a class="tile" data-fs="y" href="/photos/{{ album.id }}.html" style="background-image:url(/images/photos/{{ album.id }}/{{ album.cover }}-grid.jpg);">
@@ -73,4 +72,5 @@
     </span>
    </a>
 </div>
+<div class="text">Check back every so often, as I add pictures on occasion! Also, if you see my share any photos anywhere else that you particularly like, and think I should showcase here (or would like to buy a print of), feel free to <a href="mailto:photos@illandril.net">let me know</a>.</a></div>
 {% endblock %}
