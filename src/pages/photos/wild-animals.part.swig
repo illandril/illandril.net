@@ -23,8 +23,33 @@
     purchase: 'http://www.500pxart.com/photo/78113185?substrate=canvas&style=CG&frame=F0000&size=S'
   },
   {
+    id: 'rwb2',
+    name: 'Red-winged Blackbird',
+    purchase: 'http://www.500pxart.com/photo/79841527?substrate=canvas&style=CG&frame=F0000&size=S'
+  },
+  {
     id: 'df',
     name: 'Dirty Face',
     purchase: 'http://www.500pxart.com/photo/78113203?substrate=canvas&style=CG&frame=F0000&size=S'
+  },
+  {
+    id: 'nlf',
+    name: 'Northern Leopard Frog',
+    purchase: 'http://www.500pxart.com/photo/79840775?substrate=paper&style=PF&frame=F0092&size=S'
+  },
+  {
+    id: 'hbl',
+    name: 'Hiding Behind the Leaves',
+    purchase: 'http://www.500pxart.com/photo/79841335?substrate=wood&style=BW&frame=F0000&size=S'
+  },
+  {
+    id: 'rmb',
+    name: 'Red Milkweed Beetle',
+    purchase: 'http://www.500pxart.com/photo/79841613?substrate=paper&style=PF&frame=F0092&size=S'
+  },
+  {
+    id: 'bp',
+    name: 'Beach Party',
+    purchase: 'http://www.500pxart.com/photo/79841987?substrate=acrylic&style=AS&frame=F0000&size=S'
   }
 ] %}

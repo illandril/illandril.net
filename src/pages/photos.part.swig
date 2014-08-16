@@ -5,7 +5,7 @@
   {
     id: 'wild-animals',
     name: 'Wild Animals',
-    count: 5,
+    count: 10,
     cover: 'gbh'
   },
   {
