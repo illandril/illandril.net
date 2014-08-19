@@ -4,7 +4,7 @@
 {% set photos = [
   {
     id: 'll',
-    name: 'Lover&apos;s Leap',
+    name: "Lover's Leap",
     purchase: 'http://www.500pxart.com/photo/79163455?substrate=acrylic&style=AS&frame=F0000&size=S'
   },
   {

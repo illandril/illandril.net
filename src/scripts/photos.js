@@ -104,11 +104,14 @@
     };
     var lastPopup = null;
     window.showPhotoPopup = function(gridElem) {
+        if(lastPopup) {
+            hidePhotoPopup(lastPopup);
+        }
         var popup = gridElem.nextSibling;
         lastPopup = popup;
         addCSSClass(popup, 'active');
         var img = popup.querySelector('img');
-        img.style.maxHeight = (popup.offsetHeight - 16) + 'px';
+        img.style.maxHeight = (popup.offsetHeight - 52) + 'px';
     };
     window.hidePhotoPopup = function(closeLink) {
         lastPopup = null;

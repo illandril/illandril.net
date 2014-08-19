@@ -5,7 +5,7 @@
   {
     id: 'wild-animals',
     name: 'Wild Animals',
-    count: 10,
+    count: 14,
     cover: 'gbh'
   },
   {
@@ -24,7 +24,7 @@
     id: 'pets',
     name: 'Pets',
     count: 3,
-    cover: 'mf'
+    cover: 'pd'
   },
   {
     id: 'gardens',

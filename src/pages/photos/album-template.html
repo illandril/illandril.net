@@ -8,7 +8,7 @@
 {% block content %}
 <div class="grid">
 {% for photo in photos %}
-  <a class="tile w4 h3" data-trk="photoView" data-id="{{ photo.id }}" href="#{{ photo.id }}" onclick="showPhotoPopup(this);" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
+  <a id="grid-{{ photo.id }}" class="tile w4 h3" data-trk="photoView" data-id="{{ albumID }}-{{ photo.id }}" href="#{{ photo.id }}" onclick="showPhotoPopup(this);" style="background-image:url(/images/photos/{{ albumID }}/{{ photo.id }}-grid.jpg);">
     <span class="banner">
        <span class="primary">{% if photo.name.length > 27 %}{{ photo.name.substring(0, 24) }}...{% else %}{{ photo.name }}{% endif %}</span>
     </span>
@@ -21,9 +21,21 @@
           <img src="/images/photos/{{ albumID }}/{{ photo.id }}.jpg">
         </td>
         <td class="info">
+          <div class="photo-nav">
+          {% if !loop.first %}
+            <a class="btn" data-trk="photoView" data-id="{{ albumID }}-{{ photos[loop.index0-1].id }}" href="#{{ photos[loop.index0-1].id }}" onclick="showPhotoPopup(document.getElementById('grid-{{ photos[loop.index0-1].id }}'));">Back</a>
+          {% else %}
+            <span class="btn" style="visibility:hidden;">Back</span>
+          {% endif %}
+          {% if !loop.last %}
+            <a class="btn" data-trk="photoView" data-id="{{ albumID }}-{{ photos[loop.index0+1].id }}" href="#{{ photos[loop.index0+1].id }}" onclick="showPhotoPopup(document.getElementById('grid-{{ photos[loop.index0+1].id }}'));">Next</a>
+          {% else %}
+            <span class="btn" style="visibility:hidden;">Next</span>
+          {% endif %}
+          </div>
           <div class="title">{{ photo.name }}</div>
           {% if photo.purchase %}
-            <a class="btn" target="_blank" data-trk="photoPurchase" data-id="{{ photo.id }}" href="{{ photo.purchase }}">Purchase a print</a>
+            <a class="btn" target="_blank" data-trk="photoPurchase" data-id="{{ albumID }}-{{ photo.id }}" href="{{ photo.purchase }}">Purchase a print</a>
             <br>
           {% endif %}
           <div class="exif">

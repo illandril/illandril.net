@@ -17,13 +17,13 @@ var gutil = require('gulp-util');
 var through = require('through2');
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist', 'build']));
+gulp.task('clean', del.bind(null, ['.tmp', 'tDist', 'build']));
 
 gulp.task('build-styles', function() {
     return gulp.src('src/styles/**/*.css')
             .pipe(concat('s.css'))
             .pipe($.csso())
-            .pipe(gulp.dest('dist'))
+            .pipe(gulp.dest('tDist'))
             .pipe($.size({
                 title: 'css'
             }));
@@ -37,7 +37,7 @@ gulp.task('images', function() {
     }))
 */
     .pipe(chmod(644))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('tDist/images'))
     .pipe($.size({
         title: 'images'
     }));
@@ -46,7 +46,7 @@ gulp.task('images', function() {
 gulp.task('favicon', function() {
     return gulp.src('src/favicon*')
     .pipe(chmod(644))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('tDist'))
     .pipe($.size({
         title: 'favicons'
     }));
@@ -55,19 +55,19 @@ gulp.task('favicon', function() {
 gulp.task('static', function() {
     return gulp.src('static/**/*')
     .pipe(chmod(644))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('tDist'))
     .pipe($.size({
         title: 'static'
     }));
 });
 
 gulp.task('sitemap', ['build-html'], function () {
-    return gulp.src(['dist/**/*.html','!dist/**/*.part.html'], {
+    return gulp.src(['tDist/**/*.html','!tDist/**/*.part.html'], {
         read: false
     }).pipe(sitemap({
             siteUrl: 'https://www.illandril.net'
     }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('tDist/'));
 });
 
 gulp.task('build-fulls', function() {
@@ -119,7 +119,7 @@ gulp.task('build-html', ['build-styles', 'build-fulls', 'build-html-prep'], func
 */
     .pipe($.minifyHtml())
     .pipe(chmod(644))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./tDist/'))
     .pipe($.size({
         title: 'html'
     }));
@@ -143,7 +143,23 @@ gulp.task('watch', function () {
   gulp.watch(['src/**/*', 'static/**/*'], ['default']);
 });
 
-// Build Production Files, the Default Task
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('rm-dist', del.bind(null, ['dist']));
+
+gulp.task('real-dist', ['rm-dist'], function() {
+    return gulp.src('tDist/**')
+    .pipe(gulp.dest('dist'))
+    .pipe($.size({
+        title: 'real-dist'
+    }));
+});
+
+gulp.task('rm-tdist', ['real-dist'], del.bind(null, ['tDist']));
+
+gulp.task('build', ['clean'], function(cb){
   runSequence('sitemap', ['images','static', 'favicon'], cb);
+});
+
+// Build Production Files, the Default Task
+gulp.task('default', ['build'], function (cb) {
+  runSequence('rm-tdist', cb);
 });

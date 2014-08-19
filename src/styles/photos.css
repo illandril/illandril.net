@@ -62,7 +62,7 @@
     padding: 8px;
     line-height: 0;
     font-size: 0;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .photoPopup .close {
     color: #202020;
@@ -87,7 +87,10 @@
     width: 228px;
     text-align: center;
     padding: 8px;
-    vertical-align: middle;
+    vertical-align: top;
+}
+.photo-nav {
+    margin-bottom: 8px;
 }
 .exif {
     display: inline-block;
