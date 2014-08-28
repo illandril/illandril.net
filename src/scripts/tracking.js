@@ -5,7 +5,7 @@
         link.removeAttribute('data-trk');
         link.removeAttribute('data-id');
         link.addEventListener('click', function() {
-            window['ga']('send', 'event', event, 'click', id);
+            trackEvent(event, 'click', id);
         }, false);
     };
     

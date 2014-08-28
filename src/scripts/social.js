@@ -27,7 +27,7 @@
         btn.innerHTML = site.linkTitle;
         btn.title = site.linkTitle;
         btn.onclick = function() {
-            window['ga']('send', 'event', 'socialButton', 'click', site.id);
+            trackEvent('socialButton', 'click', site.id);
             window.open(site.getURL());
         };
         target.appendChild(btn);

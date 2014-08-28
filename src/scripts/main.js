@@ -75,7 +75,7 @@
     };
 
     var updatePage = function(uri) {
-        window['ga']('send', 'pageview');
+        trackView();
 
         var activePage = document.querySelector('main .active x-page');
         var title = getText(activePage.querySelector('x-title')) || 'Joe Spandrusyszyn\'s Portfolio';
@@ -172,7 +172,7 @@
                     snackbar('The page could not be loaded.', 'Notify', function() {
                         window.open('mailto:webmaster@illandril.net?subject=Broken Link&body=The following URL didn\'t load: ' + encodeURIComponent(href));
                     });
-                    window['ga']('send', 'event', 'badstatus-' + xhr.status, href);
+                    trackEvent('badstatus', xhr.status, href);
                     if (!skipPush) {
                         forFOF = true;
                         window.history.back();
@@ -187,7 +187,7 @@
                 snackbar('The page could not be loaded.', 'Notify', function() {
                     window.open('mailto:webmaster@illandril.net?subject=Broken Link&body=The following URL didn\'t load: ' + encodeURIComponent(href));
                 });
-                window['ga']('send', 'event', 'error', href);
+                trackEvent('error', 'xhr', href);
                 if (!skipPush) {
                     forFOF = true;
                     window.history.back();

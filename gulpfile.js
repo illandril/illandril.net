@@ -29,6 +29,24 @@ gulp.task('build-styles', function() {
             }));
 });
 
+gulp.task('build-scripts', function() {
+    return gulp.src(['src/scripts/shims.js',
+                     'src/scripts/analytics.js',
+                     'src/scripts/social.js',
+                     'src/scripts/main.js',
+                     'src/scripts/exif.js',
+                     'src/scripts/photos.js',
+                     'src/scripts/hashInit.js',
+                     'src/scripts/tracking.js' ])
+            .pipe(concat('s.js'))
+            // Pass {mangle:false} to uglify to debug js
+            .pipe($.uglify())
+            .pipe(chmod(644))
+            .pipe(gulp.dest('tDist'))
+            .pipe($.size({
+                title: 'js'
+            }));
+});
 gulp.task('images', function() {
     return gulp.src('src/images/**/*')
 /* Got a memory issue...
@@ -99,24 +117,9 @@ gulp.task('build-html-prep', function() {
                .pipe(gulp.dest('build/pages/'));
 });
 
-gulp.task('build-html', ['build-styles', 'build-fulls', 'build-html-prep'], function() {
-    var assets = $.useref.assets({
-        searchPath: '{.tmp,src}'
-    });
+gulp.task('build-html', ['build-styles', 'build-scripts', 'build-fulls', 'build-html-prep'], function() {
     return gulp.src('build/pages/**/*.swig')
     .pipe(swig())
-    .pipe(assets)
-    // Concatenate And Minify JavaScript
-    // Pass {mangle:false} to uglify to debug js
-    .pipe($.if ('*.js', $.uglify()))
-    .pipe(assets.restore())
-    .pipe($.useref())
-/*
-    .pipe(replace(/<link rel="stylesheet" href="/s.css">/, function(s) {
-            var style = fs.readFileSync('build/s.css', 'utf8');
-            return '<style>' + style + '</style>';
-        }))
-*/
     .pipe($.minifyHtml())
     .pipe(chmod(644))
     .pipe(gulp.dest('./tDist/'))

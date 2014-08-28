@@ -3,3 +3,12 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 window['ga']('create', 'UA-52514994-1', 'auto');
+
+var trackView = function() {
+  window['ga']('send', 'pageview', window.location.pathname + window.location.search + window.location.hash);
+};
+trackView();
+
+var trackEvent = function(category, action, label) {
+  window['ga']('send', 'event', category, action, label);
+};
