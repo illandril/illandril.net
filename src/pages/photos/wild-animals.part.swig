@@ -73,3 +73,10 @@
     purchase: 'http://www.500pxart.com/photo/80082591?substrate=paper&style=PF&frame=F0091&size=S'
   }
 ] %}
+<!--
+Eastern Grey Squirrel
+http://www.500pxart.com/photo/87800239?substrate=wood&style=BW&frame=F0000&size=S
+
+American Red Squirrel
+http://www.500pxart.com/photo/87800237?substrate=canvas&style=CG&frame=F0000&size=S
+-->

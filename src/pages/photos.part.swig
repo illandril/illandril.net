@@ -72,5 +72,13 @@
     </span>
    </a>
 </div>
-<div class="text">Check back every so often, as I add pictures on occasion! Also, if you see my share any photos anywhere else that you particularly like, and think I should showcase here (or would like to buy a print of), feel free to <a href="mailto:photos@illandril.net">let me know</a>.</a></div>
+<div class="text">
+    Check back every so often, as I'm going to try to add pictures every once in a while!
+    If you see me share one somewhere else that you particularly like and think I should showcase here, let me know!
+</div>
+<div class="text">
+    If you see any photos here (or anywhere else) that you would like to buy a print of,
+    email me at <a href="mailto:photos@illandril.net">photos@illandril.net to let me know</a>.
+    I'll do my best to keep the price low, but most of the cost will be beyond my control.
+</div>
 {% endblock %}
