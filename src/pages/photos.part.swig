@@ -1,6 +1,6 @@
 {% extends 'partial-template.html' %}
 {% block title %}Photos by Joe Spandrusyszyn{% endblock %}
-{% block description %}A collection of some of Joe Spandrusyszyn's photos.{% endblock %}
+{% block description %}Links to some of Joe Spandrusyszyn's photos.{% endblock %}
 {% set albums = [
   {
     id: 'wild-animals',
@@ -41,44 +41,50 @@
 ] %}
 {% block content %}
 <div class="grid">
-{% for album in albums %}
+<!--{% for album in albums %}
   <a class="tile" data-fs="y" href="/photos/{{ album.id }}.html" style="background-image:url(/images/photos/{{ album.id }}/{{ album.cover }}-grid.jpg);">
     <span class="banner">
        <span class="primary">{{ album.name }}</span>
        <span class="secondary">{{ album.count }}</span>
     </span>
   </a>
-{% endfor %}
+{% endfor %}-->
    <a class="tile" target="_blank" href="http://500px.com/illandril" style="background-image:url(/images/photos/500px.jpg);">
     <span class="banner">
      <span class="primary">500px</span>
     </span>
    </a>
-   <span class="multitile">
-       <a class="tile short" target="_blank" href="http://www.viewbug.com/member/illandril" style="background-image:url(/images/photos/viewbug.jpg);">
-        <span class="banner">
-         <span class="primary">ViewBug</span>
-        </span>
-       </a>
-       <a class="tile short" target="_blank" href="http://www.pixoto.com/illandril" style="background-image:url(/images/photos/pixoto.jpg);">
-        <span class="banner">
-         <span class="primary">Pixoto</span>
-        </span>
-       </a>
-   </span>
+   <a class="tile" target="_blank" href="https://www.flickr.com/photos/illandril/sets/" style="background-image:url(/images/photos/flickr.jpg);">
+    <span class="banner">
+     <span class="primary">Flickr</span>
+    </span>
+   </a>
    <a class="tile" target="_blank" href="http://www.jungledragon.com/user/1559/joe_spandrusyszyn.html" style="background-image:url(/images/photos/jungledragon.jpg);">
     <span class="banner">
      <span class="primary">JungleDragon</span>
     </span>
    </a>
+   <a class="tile" target="_blank" href="https://plus.google.com/photos/+JosephSpandrusyszyn/albums" style="background-image:url(/images/photos/google+.jpg);">
+    <span class="banner">
+     <span class="primary">Google+ Photos</span>
+    </span>
+   </a>
+   <a class="tile" target="_blank" href="http://www.viewbug.com/member/illandril" style="background-image:url(/images/photos/viewbug.jpg);">
+    <span class="banner">
+     <span class="primary">ViewBug</span>
+    </span>
+   </a>
+   <a class="tile" target="_blank" href="http://www.pixoto.com/illandril" style="background-image:url(/images/photos/pixoto.jpg);">
+    <span class="banner">
+     <span class="primary">Pixoto</span>
+    </span>
+   </a>
 </div>
 <div class="text">
-    Check back every so often, as I'm going to try to add pictures every once in a while!
-    If you see me share one somewhere else that you particularly like and think I should showcase here, let me know!
-</div>
-<div class="text">
-    If you see any photos here (or anywhere else) that you would like to buy a print of,
-    email me at <a href="mailto:photos@illandril.net">photos@illandril.net to let me know</a>.
-    I'll do my best to keep the price low, but most of the cost will be beyond my control.
+    If you see any photos that I have shared on any of the above sites (or anywhere else) that you would like to
+    buy a print of (to hang in your house and/or place of business), license (for use in a book, website, packaging, etc),
+    use in an educational or scientific paper, or use for any other purpose then
+    <a href="mailto:photos@illandril.net">email me at photos@illandril.net to let me know</a> (even if you would not be making any money from it!).
+    I will almost definitely agree for little or no cost (as long as I am properly creditted).
 </div>
 {% endblock %}
