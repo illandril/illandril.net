@@ -17,7 +17,7 @@ UO Short Stories
             "stories": [
                 {
                     "name": "Dreamers (Working Title)",
-                    "written": "ETA late-2015, early-2016 (but who knows when I'll actually finish it)",
+                    "written": "ETA 2017? (but who knows when I'll actually finish it)",
                     "id": "dreamers-wip"
                 }
             ]
