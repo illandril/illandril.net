@@ -1,0 +1,30 @@
+include ../mixins.pug
+mixin storyPage(title)
+  +html(title, title + ', by Joe Spandrusyszyn', '..')
+    +header(title, '../stories.html')
+    +textSection('story')
+      +textSectionTitle #{title}
+      block
+
+mixin storyHeader()
+  div(class="header")
+    block
+
+mixin storyLine()
+  +textSectionText
+    block
+
+mixin storyNote()
+  div(class="storynote")
+    block
+
+mixin storyBreak()
+  hr(class="storybreak")
+
+mixin notMineNotice()
+  div(class="notmine")
+    block
+
+mixin authorNote()
+  div(class="authornote")
+    block

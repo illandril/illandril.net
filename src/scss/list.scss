@@ -1,0 +1,19 @@
+@import "@material/list/mdc-list";
+
+.mdc-list,
+.mdc-list-group {
+  @extend %max-width-content;
+}
+
+.mdc-list-group {
+  .mdc-list-group__subheader {
+    margin-bottom: 0;
+    .subtitle {
+      @include mdc-typography(caption);
+      @include mdc-theme-prop(color, text-secondary-on-background);
+    }
+  }
+  .mdc-list {
+    padding-left: 16px;
+  }
+}

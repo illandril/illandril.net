@@ -1,0 +1,16 @@
+@import "@material/top-app-bar/mdc-top-app-bar";
+
+.mdc-top-app-bar--prominent-fixed-adjust,
+.mdc-top-app-bar--fixed-adjust {
+  + .mdc-image-list {
+    margin-top: 8px;
+  }
+}
+
+.mdc-top-app-bar {
+  @include mdc-elevation(1);
+  text-shadow: #000 0px 0px 5px;
+  background-image: url("../images/dean.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+}

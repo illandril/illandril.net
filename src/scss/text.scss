@@ -1,0 +1,16 @@
+@import "@material/typography/mdc-typography";
+
+section.text {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  .title {
+    @extend .mdc-typography--headline5;
+    @include mdc-theme-prop(color, secondary);
+  }
+
+  p {
+    @extend .mdc-typography--body1;
+  }
+}
