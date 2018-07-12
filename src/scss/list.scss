@@ -1,7 +1,7 @@
 @import "@material/list/mdc-list";
 
-.mdc-list,
-.mdc-list-group {
+body > .mdc-list,
+body > .mdc-list-group {
   @extend %max-width-content;
 }
 
