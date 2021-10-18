@@ -1,0 +1,55 @@
+@import "_reset.scss";
+@import "../_variables.scss";
+
+%container {
+    width: 100%;
+    margin-inline: auto;
+    padding: 1rem;
+
+    @media (min-width: 576px) {
+        width: 95%;
+        max-width: 1320px;
+    }
+}
+
+header {
+    background-color: $color-primary;
+    color: $contrast-primary;
+    box-shadow: $shadow;
+    & > nav {
+        @extend %container;
+        background-image: url("/images/dean.jpg");
+        background-repeat: no-repeat;
+        background-position: right center;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        vertical-align: middle;
+        padding-block: 1.5rem;
+        & > a {
+            color: inherit;
+            &:only-child {
+                line-height: 3rem;
+            }
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+            .back {
+                display: inline-block;
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                line-height: 1.25rem;
+                vertical-align: middle;
+            }
+        }
+        & > div {
+            font-size: 1rem;
+            line-height: 1.25rem;
+        }
+    }
+}
+
+main {
+    @extend %container;
+    text-align: center;
+}

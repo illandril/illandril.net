@@ -1,0 +1,11 @@
+@import "../_variables.scss";
+
+.card-columns {
+    padding: 1rem 0.5rem;
+
+    @media (min-width: 1000px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.25rem;
+    }
+}

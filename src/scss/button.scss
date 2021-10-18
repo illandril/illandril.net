@@ -1,5 +1,0 @@
-@import "@material/button/mdc-button";
-
-.mdc-button.secondary {
-  @include mdc-button-filled-accessible(mdc-theme-prop-value(secondary));
-}

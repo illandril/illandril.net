@@ -1,0 +1,44 @@
+$color-primary: var(--color-primary);
+$contrast-primary: var(--color-primary-contrast);
+$color-bg: var(--color-bg);
+$color-fg: var(--color-fg);
+$color-shadow: var(--color-shadow);
+$color-highlight: var(--color-highlight);
+$link-color: var(--color-link);
+$shadow: 0 1px 4px 0 $color-shadow;
+$highlight: 0 1px 6px 2px $color-highlight;
+$color-ooc: var(--color-ooc);
+$color-parchment: var(--color-parchment);
+
+$color-primary-light: #000;
+$color-primary-light-contrast: #fff;
+$color-primary-dark: #000;
+$color-primary-dark-contrast: #fff;
+$color-ooc-light: #ccf;
+$color-ooc-dark: #536;
+$color-parchment-light: rgb(240, 236, 220);
+$color-parchment-dark: #5c563c;
+
+:root {
+    --color-primary: #{$color-primary-light};
+    --color-primary-contrast: #{$color-primary-light-contrast};
+    --color-ooc: #{$color-ooc-light};
+    --color-parchment: #{$color-parchment-light};
+    --color-bg: #fff;
+    --color-fg: #212529;
+    --color-shadow: rgba(0,0,0,.5);
+    --color-highlight: #000;
+    --color-link: #03c;
+
+    @media (prefers-color-scheme: dark) {
+        --color-primary: #{$color-primary-dark};
+        --color-primary-contrast: #{$color-primary-dark-contrast};
+        --color-ooc: #{$color-ooc-dark};
+        --color-parchment: #{$color-parchment-dark};
+        --color-bg: #292e33;
+        --color-fg: #fff;
+        --color-shadow: #000;
+        --color-highlight: #999;
+        --color-link: #9cf;
+    }
+}

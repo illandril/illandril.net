@@ -1,0 +1,87 @@
+@import '../_variables.scss';
+
+.story {
+    max-width: 70ch;
+    display: inline-block;
+    text-align: left;
+    line-height: 1.5em;
+    padding-bottom: 3.5rem;
+
+    
+    .summary,
+    .authorNote,
+    .notMine {
+        background-color: $color-ooc;
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 1rem;
+        box-shadow: $shadow;
+        opacity: 0.9;
+    }
+
+    .notMine::before {
+        content: "Copyright notice: ";
+    }
+
+    .authorNote::before {
+        content: "Author's note: ";
+    }
+
+    .header {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-block: 1rem;
+    }
+
+
+    .storyNote {
+        white-space: pre-wrap;
+        box-shadow: $shadow;
+        margin: 0.5rem 1.5rem;
+        padding: 0.25rem 0.75rem;
+        background-color: $color-parchment;
+        & + .storyNote {
+            margin-top: 1rem;
+        }
+    }
+
+    .storyBreak {
+        margin: 1rem 5rem;
+        height: 1px;
+        display: block;
+        background-color: $color-fg;
+        opacity: 0.2;
+    }
+
+    .line {
+        text-indent: 2em;
+        padding-block: 0.25rem;
+    }
+}
+
+.back-to-stories {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    box-shadow: $shadow;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
+    color: $contrast-primary;
+    background-color: $color-primary;
+    .icon {
+        font-size: 0.8em;
+        vertical-align: middle;
+        padding-right: 0.25em;
+    }
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        box-shadow: $highlight;
+    }
+    &:focus {
+        outline: none;
+        &:not(:focus-visible) {
+            box-shadow: $shadow;
+        }
+    }
+}

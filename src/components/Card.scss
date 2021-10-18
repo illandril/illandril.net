@@ -1,0 +1,17 @@
+@import '../_variables.scss';
+
+.card {
+    box-shadow: $shadow;
+    border-radius: 0.25rem;
+    text-align: left;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+    transform: translateZ(0);
+
+    & > h2 {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: normal;
+    }
+}

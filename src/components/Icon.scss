@@ -1,0 +1,11 @@
+@import "../_variables.scss";
+
+.icon {
+    display: inline-block;
+    vertical-align: text-top;
+    & > svg {
+        height: 1em;
+        vertical-align: text-top;
+        fill: currentColor;
+    }
+}
