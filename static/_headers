@@ -1,0 +1,15 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' static.cloudflareinsights.com; connect-src 'self' cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; worker-src 'none'
+  X-XSS-Protection: 1; mode=block
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-site
+  Cross-Origin-Resource-Policy: same-site
+
+https://joe.spandrusyszyn.com/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
