@@ -8,8 +8,5 @@
   Cross-Origin-Opener-Policy: same-site
   Cross-Origin-Resource-Policy: same-site
 
-https://joe.spandrusyszyn.com/*
-  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
