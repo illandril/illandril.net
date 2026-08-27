@@ -6,9 +6,14 @@ const SoftwarePage = () => {
         <Page
             title="Software developed by Joe Spandrusyszyn"
             subtitle="Software"
-            description="Joe Spandrusyszyn has worked on RSA WebCRD, Snail's Pace, Air Sculpture Website, and more"
+            description="Joe Spandrusyszyn has worked on B-Stock, RSA WebCRD, Snail's Pace, Air Sculpture Website, and more"
         >
             <PhotoLinks>
+                <PhotoLink
+                    href="https://www.bstock.com"
+                    imgSrc="/images/software/bstock.png"
+                    title="B-Stock"
+                />
                 <PhotoLink
                     href="https://www.rocsoft.com/products/webcrd/"
                     imgSrc="/images/software/webcrd.png"

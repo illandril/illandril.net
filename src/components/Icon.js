@@ -1,12 +1,14 @@
-import ArrowLeft from '@fortawesome/fontawesome-free/svgs/solid/arrow-left.svg';
-import ExternalLink from '@fortawesome/fontawesome-free/svgs/solid/external-link-alt.svg';
 import PropTypes from 'prop-types';
 
 import './Icon.scss';
 
 const icons = new Map();
-icons.set('arrow-left', ArrowLeft);
-icons.set('external-link', ExternalLink);
+icons.set('arrow-left', () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+    {/* Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc. */}
+    <path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"/></svg>);
+icons.set('external-link', () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+    {/* Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc. */}
+    <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/></svg>);
 
 const Icon = ({ name }) => {
     const IconSVG = icons.get(name) || 'del';

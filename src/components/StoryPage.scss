@@ -1,4 +1,4 @@
-@import '../_variables.scss';
+@import "../_variables.scss";
 
 .story {
     max-width: 70ch;
@@ -7,7 +7,6 @@
     line-height: 1.5em;
     padding-bottom: 3.5rem;
 
-    
     .summary,
     .authorNote,
     .notMine {
@@ -32,7 +31,6 @@
         font-weight: bold;
         margin-block: 1rem;
     }
-
 
     .storyNote {
         white-space: pre-wrap;
@@ -59,6 +57,15 @@
     }
 }
 
+.story-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a .icon {
+        padding-left: 0.25rem;
+    }
+}
 .back-to-stories {
     position: fixed;
     bottom: 2rem;

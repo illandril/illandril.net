@@ -26,7 +26,7 @@ const StoriesPage = () => {
     return (
         <Page
             title="Stories written by Joe Spandrusyszyn"
-            subtitle="Software"
+            subtitle="Stories"
             description="Joe Spandrusyszyn has worked on RSA WebCRD, Snail's Pace, Air Sculpture Website, and more"
         >
             <div className="story-groups">

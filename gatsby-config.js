@@ -18,7 +18,7 @@ module.exports = {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
-                    include: /node_modules\/@fortawesome\/fontawesome-free\/svgs\//,
+                    include: /node_modules\/@fortawesome\/fontawesome-free\/svgs\/.*\//,
                 },
             },
         },
